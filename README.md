@@ -22,7 +22,7 @@ The application uses GLib API's to use the D-Bus to send and receive IPC message
 
 D-Bus (Desktop Bus) is an inter-process communication (IPC) system widely used in Unix-like operating systems. It allows multiple software applications to communicate with one another in a standardized way, facilitating coordination and data sharing. D-Bus supports both system-wide and user-session communication, making it integral to modern desktop environments and system services.
 
-So, we spent some time on learning about D-Bus by visiting its [documentation](https://www.freedesktop.org/wiki/Software/dbus) and then we came across this cool [blog](https://book.hacktricks.xyz/linux-hardening/privilege-escalation/d-bus-enumeration-and-command-injection-privilege-escalation) on hacktricks on how to enumerate and perform privilege escalation on D-Bus.
+So, we spent some time on learning about D-Bus by visiting its [documentation](https://www.freedesktop.org/wiki/Software/dbus) and then we came across this [cool blog](https://book.hacktricks.xyz/linux-hardening/privilege-escalation/d-bus-enumeration-and-command-injection-privilege-escalation) on hacktricks on how to enumerate and perform privilege escalation on D-Bus.
 
 ![meme 2](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/dbus.jpg)
 
