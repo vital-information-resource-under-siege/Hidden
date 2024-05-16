@@ -6,4 +6,6 @@ So this was an idea thought about me and my teammates where our end goal was to 
 
 ![meme 1](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
 
-The targeted application uses dbus to send and receive IPC messages from 
+So me and my team had an application  in hand that consists of two binaries one with normal user privileges and the other one with root privileges.
+
+![meme 1](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/dbus.jpg)
