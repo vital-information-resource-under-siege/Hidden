@@ -1,5 +1,7 @@
 # Breaking Down Barriers: Exploiting Authenticated IPC Clients
 
+![start](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/start.jpg)
+
 **Inter-Process Communication (IPC)** is a critical aspect of modern computing, enabling different processes within an operating system to exchange data and coordinate actions. Through various methods like message passing, shared memory, and sockets, IPC facilitates seamless interaction between distinct applications, enhancing system efficiency and functionality. However, the security of these communications is paramount, as vulnerabilities in authenticated IPC clients can lead to severe breaches and exploitation. 
 
 ## Story on how we end up to this blog
@@ -8,7 +10,9 @@
 
 So,Me and my team had an application  in hand that consists of two binaries one with normal user privileges and the other one with root privileges.
 
-We wanted to perform the **privileged actions** done by the root privileges tp  
+The application has some set of credentials that checks upon it on the server side and then sends an IPC message from the binary with normal user privileges to the binary with root privileges to perform some **privileged actions** .
+
+The end goal was to perform the privileged actions without providing any credentials to the application. 
 
 Our first plan in our mind is to attack the IPC component itself. So we started the recon process to know about the IPC mechanism on how the low privileges application passes messages to the root privileges application.
 
@@ -30,8 +34,10 @@ So, we spent some time on learning about D-Bus by visiting its [documentation pa
 
 After a long time spent on learning about D-Bus and performing some enumeration as described by the Blog.We finally came to this conclusion that attacking the D-Bus is super complicated and it is not as easy as attacking the custom implementation like  I thought it to be.
 
-![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/dbus_vs_me.jpg)
+![meme 3](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/dbus_vs_me.jpg)
 
-The next idea was to make unauthenticated IPC calls to a specific IPC client to perform privileged actions.
+
+
+I started creating a binary that tries to sends the same IPC messages to perform the privileged actions. 
 
 ![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
