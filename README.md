@@ -2,7 +2,7 @@
 
 **Inter-Process Communication (IPC)** is a critical aspect of modern computing, enabling different processes within an operating system to exchange data and coordinate actions. Through various methods like message passing, shared memory, and sockets, IPC facilitates seamless interaction between distinct applications, enhancing system efficiency and functionality. However, the security of these communications is paramount, as vulnerabilities in authenticated IPC clients can lead to severe breaches and exploitation. 
 
-### Story on how we end up to this blog
+## Story on how we end up to this blog
 
 So me and my team had an application  in hand that consists of two binaries one with normal user privileges and the other one with root privileges.
 
