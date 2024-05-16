@@ -36,8 +36,12 @@ After a long time spent on learning about D-Bus and performing some enumeration 
 
 ![meme 3](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/dbus_vs_me.jpg)
 
+#### Plan B:-
 
+I came to the conclusion that D-Bus is implemented pretty well and finding vulnerabilities in the D-Bus itself is hard.
 
-I started creating a binary that tries to sends the same IPC messages to perform the privileged actions. 
+After some hours of brainstorming session, we next came to the plan of creating our own application that sends IPC messages to the root binary to perform the privileged actions.
+
+So I spent some hours on reading the [Glib Documentation](https://docs.gtk.org/glib/) and 
 
 ![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
