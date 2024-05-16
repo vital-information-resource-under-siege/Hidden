@@ -74,8 +74,18 @@ The code was working but the root application was not performing the required ac
 
 After all those reading I have done from the D-Bus Documentation, I am pretty sure that this wasn't the behaviour of D-Bus.
 
-My attention turned towards the application once again and 
+My attention turned towards the application binary once again and scroll through some decompiled code again. Then there was this function call with the name 
 
-![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/2_vs_1.jpg)
+```c++
+pcVar16 = (char *)dbus_message_get_sender(param_2);
+cVar8 = secret_object_name::verifyRPCClient(this,pcVar16);
+```
 
-![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
+This verifyRPCClient function inturn calls verifySignature which calls signedelf function with a RSAPublicKey to verify the binary which has been sending the IPC messages.  
+
+![meme 4](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
+
+
+
+![meme 5](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/2_vs_1.jpg)
+
