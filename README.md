@@ -6,9 +6,11 @@
 
 #### Recon :-
 
-So me and my team had an application  in hand that consists of two binaries one with normal user privileges and the other one with root privileges.
+So,Me and my team had an application  in hand that consists of two binaries one with normal user privileges and the other one with root privileges.
 
-So, our first plan in our mind is to attack the IPC component itself. So we started the recon process to know about the IPC mechanism on how the low privileges application passes messages to the root privileges application.
+We wanted to perform the **privileged actions** done by the root privileges tp  
+
+Our first plan in our mind is to attack the IPC component itself. So we started the recon process to know about the IPC mechanism on how the low privileges application passes messages to the root privileges application.
 
 The initial thoughts before reversing the application we thought the IPC component might be a Shared Memory, Message Queues, Sockets,Pipes or Signals. If the implementation is any of this, we already had an idea on how to attack these implementation.
 
@@ -26,12 +28,10 @@ So, we spent some time on learning about D-Bus by visiting its [documentation pa
 
 ![meme 2](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/dbus.jpg)
 
-So after a long time spent on learning about D-Bus and performing some enumeration as described by the Blog.
-
-We finally came to this conclusion that attacking the D-Bus is super complicated and it is not as easy as attacking the custom implementation like  I thought it to be.
+After a long time spent on learning about D-Bus and performing some enumeration as described by the Blog.We finally came to this conclusion that attacking the D-Bus is super complicated and it is not as easy as attacking the custom implementation like  I thought it to be.
 
 ![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/dbus_vs_me.jpg)
 
-So this was an idea thought about me and my teammates where our end goal was to make unauthenticated calls to a specific IPC client to perform privileged actions.
+The next idea was to make unauthenticated IPC calls to a specific IPC client to perform privileged actions.
 
 ![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
