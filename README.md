@@ -113,9 +113,13 @@ The Shared Object Injection vulnerability came into play again where we can use 
 
 The start for the attack surface started where we found multiple function points which can alter the code flow to reach our goal.
 
-We found two critical places that can have the highest attack impact .
+We found two critical places that can have the highest attack impact (Privileged Actions)
 
+1)Without providing any credentials, we can bypass the application logic flow and perform the actions it wasn;t supposed to.
 
+2)The application with normal user privileges was sending sensitive critical data to the application with root privileges through D-Bus .
+
+By intercepting the library calls to the application and injection our own code, we were able to perform the privileged action without any authentication and also get some sensitive data leak.
 
 
 
