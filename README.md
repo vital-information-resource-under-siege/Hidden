@@ -28,8 +28,10 @@ So, we spent some time on learning about D-Bus by visiting its [documentation pa
 
 So after a long time spent on learning about D-Bus and performing some enumeration as described by the Blog.
 
-We finally came to this conclusion that attacking this IPC compo
+We finally came to this conclusion that attacking the D-Bus is super complicated and it is not as easy as attacking the custom implementation like  I thought it to be.
+
+![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/dbus_vs_me.jpg)
 
 So this was an idea thought about me and my teammates where our end goal was to make unauthenticated calls to a specific IPC client to perform privileged actions.
 
-![meme 3](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
+![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
