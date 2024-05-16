@@ -4,4 +4,6 @@
 
 So this was an idea thought about me and my teammates where our end goal was to make unauthenticated calls to a specific IPC client to perform privileged actions.
 
+![meme 1](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
+
 The targeted application uses dbus to send and receive IPC messages from 
