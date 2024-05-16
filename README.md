@@ -42,6 +42,40 @@ I came to the conclusion that D-Bus is implemented pretty well and finding vulne
 
 After some hours of brainstorming session, we next came to the plan of creating our own application that sends IPC messages to the root binary to perform the privileged actions.
 
-So I spent some hours on reading the [Glib Documentation](https://docs.gtk.org/glib/) and 
+So I spent some hours on reading the [Glib Documentation](https://docs.gtk.org/glib/) and wrote a C Code with multiple errors and finally after a lot of tries the code was working.
+
+```c
+#include <stdio.h>
+#include <gio/gio.h>
+
+int main() {
+    GError *error = NULL;
+    GDBusConnection *connection;
+    GDBusMessage *message, *reply;
+    GVariant *variant;
+    GDBusProxy *proxy;
+    int ret;
+    // Synchronously get the session bus
+    connection = g_bus_get_sync(1, NULL, &error);
+    if (error != NULL) {
+        g_printerr("Error connecting to bus: %s\n", error->message);
+        g_error_free(error);
+        return 1;
+    }
+    proxy = g_dbus_proxy_new_sync(connection,0,0,"dbus_service_name","/object_path","interface_name",0,&error);
+    variant = g_variant_new("data_type","data");
+    variant = g_dbus_proxy_call_sync(proxy,"method_name",variant,0,60000,0,&error);
+    g_variant_get(variant,"return_value_data_type",&ret);
+    printf("The server answered with %d\n",ret);
+}
+```
+
+The code was working but the root application was not performing the required action,it was rejecting the IPC message we are sending.
+
+After all those reading I have done from the D-Bus Documentation, I am pretty sure that this wasn't the behaviour of D-Bus.
+
+My attention turned towards the application once again and 
+
+![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/2_vs_1.jpg)
 
 ![meme ](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
