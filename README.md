@@ -121,6 +121,8 @@ We found two critical places that can have the highest attack impact (Privileged
 
 By intercepting the library calls to the application and injection our own code, we were able to perform the privileged action without any authentication and also get some sensitive data leak.
 
+![meme 6](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/impact.jpeg)
+
 
 
 
