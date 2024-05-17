@@ -4,7 +4,7 @@
 
 **Inter-Process Communication (IPC)** is a critical aspect of modern computing, enabling different processes within an operating system to exchange data and coordinate actions. Through various methods like message passing, shared memory, and sockets, IPC facilitates seamless interaction between distinct applications, enhancing system efficiency and functionality. However, the security of these communications is paramount, as vulnerabilities in authenticated IPC clients can lead to severe breaches and exploitation. 
 
-## Story on how we end up to this blog
+## Story on how we end up on this blog
 
 #### Recon :-
 
@@ -85,7 +85,7 @@ This verifyRPCClient function in turn calls verifySignature which calls signedel
 
 ![meme 4](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/plan.jpg)
 
-We were going through the busctl monitor as well, Whenever I was trying to pass the message the D-Bus showed an error to confirm the authentication is taking place.
+We were going through the busctl monitor as well, Whenever I was trying to pass the message the D-Bus showed an error to confirm the authentication was taking place.
 
 In my mind, I was still thinking of a way that would allow me to perform unauthenticated IPC calls. Finally, reality hit me that unauthenticated IPC calls can't be made to this application. 
 
@@ -101,7 +101,7 @@ The only way is to send authenticated IPC messages without the need for credenti
 
 We explored all these previous options we had, Every issue we found in the application that we can use to maybe aid us here in this goal.
 
-We already identified an issue of **Shared Objection Injection ** that is present in the application that runs on lower privileges. However, the issue at first seemed to be without any impact as the goal was to perform privileged actions.
+We already identified an issue of **Shared Objection Injection** that is present in the application that runs on lower privileges. However, the issue at first seemed to be without any impact as the goal was to perform privileged actions.
 
 #### Shared Object Injection:-
 
@@ -117,7 +117,7 @@ We found two critical places that can have the highest attack impact (Privileged
 
 1)Without providing any credentials, we can bypass the application logic flow and perform the actions it wasn't supposed to.
 
-2)The application with normal user privileges was sending sensitive critical data to the application with root privileges through D-Bus.
+2)The application with normal user privileges sent sensitive critical data to the application with root privileges through D-Bus.
 
 By intercepting the library calls to the application and injection our own code, we were able to perform the privileged action without any authentication and also get some sensitive data leak.
 
