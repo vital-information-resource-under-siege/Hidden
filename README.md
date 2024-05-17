@@ -8,7 +8,7 @@
 
 #### Recon :-
 
-So, Our team was assessing an application hand that consisted of two binaries one with normal user privileges and the other one with root privileges.
+So, Our team was assessing an application that consisted of two binaries one with normal user privileges and the other one with root privileges.
 
 The application has some set of credentials that checks upon it on the server side and then sends an IPC message from the binary with normal user privileges to the binary with root privileges to perform some **privileged actions** .
 
