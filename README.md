@@ -113,7 +113,13 @@ The Shared Object Injection vulnerability came into play again where we can use 
 
 We searched for the attack surface, finding multiple function points that could alter the code flow to reach our goal.
 
-We found two critical places that can have the highest attack impact (Privileged Actions)
+After we spent hours on finding the attack surface, for performing the attack in a stable way.
+
+Our team found something very serious the user privileges application was sending critical sensitive data to the root privileges application through IPC which can be smuggled using our injection bug that can have more impact than the former goal we were pursuing. 
+
+![meme 6](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/after_before.jpg)
+
+This single bug can now trigger two critical points of the application that can have the maximum impact.
 
 1)Without providing any credentials, we can bypass the application logic flow and perform the actions it wasn't supposed to.
 
@@ -121,7 +127,7 @@ We found two critical places that can have the highest attack impact (Privileged
 
 By intercepting the library calls to the application and injection our own code, we were able to perform the privileged action without any authentication and also get some sensitive data leak.
 
-![meme 6](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/impact.jpg)
+![meme 7](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/impact.jpg)
 
 
 
