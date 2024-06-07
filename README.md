@@ -14,6 +14,8 @@ The application has some set of credentials that checks upon it on the server si
 
 The end goal was to perform the privileged actions without providing any credentials to the application. 
 
+![meme 0](https://github.com/vital-information-resource-under-siege/Hidden/blob/main/Images/team.jpg)
+
 Our first plan in our mind is to attack the IPC component itself. So we started the recon process to know about the IPC mechanism on how the low privileges application passes messages to the root privileges application.
 
 The initial thoughts before reversing the application we thought the IPC component might be a Shared Memory, Message Queues, Sockets, Pipes or Signals. If the implementation is any of these, we already have an idea of how to attack this implementation.
